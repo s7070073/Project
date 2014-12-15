@@ -14,7 +14,7 @@ def callback():
     print 'Hello World.'
 """form kim"""
 """project def code to tkinter"""
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 1, 1, 20]
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 15, 1, 20]
 range_level = 5
 
 def len_data():
@@ -52,7 +52,7 @@ def mode():
             mode[i] = mode[i] + 1
     for j in mode:
         if mode[j] == max(mode.values()):
-            mode2.append(j)
+            mode2.append('%.2f'%j)
     return mode2
 
 def pisai():
@@ -63,16 +63,36 @@ def range_len():
     """"""
     return pisai() / float(range_level)
     
+def range_out():
+    """print range"""
+    min_range = num_min()
+    max_range = num_min() + range_len()
+    range_count = {}
+    for i in xrange(5):
+        range_count["range"+str(i+1)] = 0
+        ans = "["+str(min_range)+" - "+str(max_range)+"] |"
+        for j in data:
+            if j >= min_range and j <= max_range:
+                ans = ans + "-"
+                range_count["range"+str(i+1)] += 1
+        min_range = max_range
+        max_range = max_range + range_len()
+        print ans
+    print range_count
+        
 
 print "data >>>", data
-print "len_data >>>", len_data()
-print "num_min >>>", num_min()
-print "num_max >>>", num_max()
-print "averange >>>", averange()
-print "num_sd >>>", num_sd()
+print "len_data >>>", '%.2f'%len_data()
+print "num_min >>>", '%.2f'%num_min()
+print "num_max >>>", '%.2f'%num_max()
+print "averange >>>", '%.2f'%averange()
+print "num_sd >>>", '%.2f'%num_sd()
 print "mode >>>", mode()
-print "pisai >>>", pisai()
-print "range_len >>>", range_len()
+print "pisai >>>", '%.2f'%pisai()
+print "range_len >>>", '%.2f'%range_len()
+print ""
+range_out()
+
 
 
 '''#######################  input zone  #################'''
