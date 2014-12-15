@@ -92,16 +92,16 @@ process_button.place(x=670, y=30)
 '''#######################  output zone  #################'''
 #len_data
 len_data_label = Label(app, text='len data')
-len_data_label.place(x=170, y=500)
+len_data_label.place(x=170, y=520)
 len_data = Listbox(app, height=1, width=10)
 len_data.insert(1, 321)
-len_data.place(x=250, y=500)
+len_data.place(x=250, y=520)
 
 #max_data
 max_data_label = Label(app, text='max')
-max_data_label.place(x=20, y=500)
+max_data_label.place(x=20, y=520)
 max_data = Listbox(app, height=1, width=10)
-max_data.place(x=80, y=500)
+max_data.place(x=80, y=520)
 
 #min_data
 min_data_label = Label(app, text='min')
@@ -117,9 +117,9 @@ pisia_data.place(x=250, y=550)
 
 #average_data
 average_data_label = Label(app, text='average')
-average_data_label.place(x=370, y=500)
+average_data_label.place(x=370, y=520)
 average_data = Listbox(app, height=1, width=10)
-average_data.place(x=430, y=500)
+average_data.place(x=430, y=520)
 
 
 #sd_data
@@ -131,9 +131,9 @@ sd_data.place(x=430, y=550)
 
 #mode_data
 mode_data_label = Label(app, text='mode')
-mode_data_label.place(x=570, y=500)
+mode_data_label.place(x=570, y=520)
 mode_data = Listbox(app, height=1, width=10)
-mode_data.place(x=630, y=500)
+mode_data.place(x=630, y=520)
 
 
 #range_data
@@ -146,8 +146,22 @@ range_data.place(x=630, y=550)
 
 
 #histro
-canvas_area = Canvas(app, width=750, height=350, background='green')
+canvas_area = Canvas(app, width=750, height=410, background='pink')
 canvas_area.place(x=20, y=100)
+
+canvas_area.create_line(50, 15, 50, 378)
+canvas_area.create_line(50, 378, 704, 378)
+canvas_area.create_line(50, 345, 704, 345, dash=(4, 4))
+canvas_area.create_line(50, 312, 704, 312, dash=(4, 4))
+canvas_area.create_line(50, 279, 704, 279, dash=(4, 4))
+canvas_area.create_line(50, 246, 704, 246, dash=(4, 4))
+canvas_area.create_line(50, 213, 704, 213, dash=(4, 4))
+canvas_area.create_line(50, 180, 704, 180, dash=(4, 4))
+canvas_area.create_line(50, 147, 704, 147, dash=(4, 4))
+canvas_area.create_line(50, 114, 704, 114, dash=(4, 4))
+canvas_area.create_line(50, 81, 704, 81, dash=(4, 4))
+canvas_area.create_line(50, 48, 704, 48, dash=(4, 4))
+canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 
 canvas_area.create_rectangle(10, 10, 30, 30)
 
