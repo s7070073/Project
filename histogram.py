@@ -12,9 +12,9 @@ app.resizable(0, 0)
 
 #input box
 input_box_label = Label(app, text='Data Input')
-input_box_label.place(x=20, y=5)
-input_box = Entry(app, width=100)
-input_box.place(x=20, y=30)
+input_box_label.place(x=30, y=42)
+input_box = Entry(app, width=98)
+input_box.place(x=30, y=67)
 
 
 
@@ -173,59 +173,59 @@ process_button.place(x=670, y=30)
 
 '''#######################  output zone  #################'''
 #len_data
-len_data_label = Label(app, text='len data')
-len_data_label.place(x=170, y=520)
+len_data_label = Label(app, text='Length')
+len_data_label.place(x=190, y=520)
 len_data = Listbox(app, height=1, width=10)
-len_data.place(x=250, y=520)
+len_data.place(x=270, y=520)
 
 #max_data
-max_data_label = Label(app, text='max')
-max_data_label.place(x=20, y=520)
+max_data_label = Label(app, text='Max')
+max_data_label.place(x=40, y=520)
 max_data = Listbox(app, height=1, width=10)
-max_data.place(x=80, y=520)
+max_data.place(x=100, y=520)
 
 #min_data
-min_data_label = Label(app, text='min')
-min_data_label.place(x=20, y=550)
+min_data_label = Label(app, text='Min')
+min_data_label.place(x=40, y=550)
 min_data = Listbox(app, height=1, width=10)
-min_data.place(x=80, y=550)
+min_data.place(x=100, y=550)
 
 #range_data
 range_data_label = Label(app, text='Range')
-range_data_label.place(x=170, y=550)
+range_data_label.place(x=190, y=550)
 range_data = Listbox(app, height=1, width=10)
-range_data.place(x=250, y=550)
+range_data.place(x=270, y=550)
 
 #average_data
-average_data_label = Label(app, text='average')
-average_data_label.place(x=370, y=520)
+average_data_label = Label(app, text='Average')
+average_data_label.place(x=390, y=520)
 average_data = Listbox(app, height=1, width=10)
-average_data.place(x=430, y=520)
+average_data.place(x=450, y=520)
 
 
 #sd_data
 sd_data_label = Label(app, text='S.D.')
-sd_data_label.place(x=370, y=550)
+sd_data_label.place(x=390, y=550)
 sd_data = Listbox(app, height=1, width=10)
-sd_data.place(x=430, y=550)
+sd_data.place(x=450, y=550)
 
 
 #mode_data
-mode_data_label = Label(app, text='mode')
+mode_data_label = Label(app, text='Mode')
 mode_data_label.place(x=570, y=520)
 mode_data = Listbox(app, height=1, width=10)
-mode_data.place(x=630, y=520)
+mode_data.place(x=650, y=520)
 
 
 #class_interval_data
 class_interval_data_label = Label(app, text='Class Interval')
 class_interval_data_label.place(x=570, y=550)
 class_interval_data = Listbox(app, height=1, width=10)
-class_interval_data.place(x=630, y=550)
+class_interval_data.place(x=650, y=550)
 '''#######################  output zone  #################'''
 
 
-#canvas_area.create_rectangle(10, 10, 30, 30)
+
 
 
 
