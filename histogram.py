@@ -7,8 +7,8 @@ PHONGNARET(57070073) and PHATTARAPON(57070086).
 '''
 from Tkinter import *
 app = Tk()
-app.maxsize(800, 600)
 app.minsize(800, 600)
+app.resizable(0, 0)
 
 def callback():
     print 'Hello World.'
@@ -72,4 +72,14 @@ range_data_label = Label(app, text='range')
 range_data_label.place(x=570, y=550)
 range_data = Listbox(app, height=1, width=10)
 range_data.place(x=630, y=550)
+
+
+#histro
+canvas_area = Canvas(app, width=750, height=350, background='red')
+canvas_area.place(x=20, y=100)
+
+canvas_area.create_rectangle(10, 10, 30, 30)
+
+
+
 app.mainloop()
