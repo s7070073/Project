@@ -12,6 +12,67 @@ app.resizable(0, 0)
 
 def callback():
     print 'Hello World.'
+"""form kim"""
+"""project def code to tkinter"""
+data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 1, 1, 20]
+range_level = 5
+
+def len_data():
+    """find len of data"""
+    return len(data)
+
+def num_min():
+    """find min number of data"""
+    return min(data)
+
+def num_max():
+    """find max number of data"""
+    return max(data)
+
+def averange():
+    """calculate averange from data"""
+    return (sum(data))/float((len(data)))
+
+def num_sd():
+    """"""
+    average =(sum(data))/float((len(data)))
+    sigma = 0
+    for i in xrange(len(data)):
+        sigma = sigma + ((data[i]-average)**2)
+    num_sd = (sigma/(len(data)-1))**0.5
+    return num_sd
+def mode():
+    """find mode of data"""
+    mode = {}
+    mode2 = []
+    for i in data:
+        if i not in mode:
+            mode[i] = 1
+        else:
+            mode[i] = mode[i] + 1
+    for j in mode:
+        if mode[j] == max(mode.values()):
+            mode2.append(j)
+    return mode2
+
+def pisai():
+    """"""
+    return num_max() - num_min()
+
+def range_len():
+    """"""
+    return pisai() / float(range_level)
+    
+
+print "data >>>", data
+print "len_data >>>", len_data()
+print "num_min >>>", num_min()
+print "num_max >>>", num_max()
+print "averange >>>", averange()
+print "num_sd >>>", num_sd()
+print "mode >>>", mode()
+print "pisai >>>", pisai()
+print "range_len >>>", range_len()
 
 
 '''#######################  input zone  #################'''
