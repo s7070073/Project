@@ -136,7 +136,7 @@ def process_but():
     range_data.insert(0, max(data) - min(data))
 
     average_data.delete(1, last=None)
-    average_data.insert(0, sum(data)/float(len(data)))
+    average_data.insert(0, '%.2f' % (sum(data)/float(len(data))))
 
     sd_data.delete(1, last=None)
     sd_data.insert(0, '%.2f' % num_sd)
