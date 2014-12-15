@@ -32,7 +32,7 @@ range_level = 5
 def range_out(data):
     """print range"""
     min_range = min(data)
-    max_range = min(data) + ((max(data) - min(data))/4.0)
+    max_range = min(data) + ((max(data) - min(data))/6.0)
     range_count = {}
     count_data = []
     for i in xrange(5):
@@ -41,12 +41,11 @@ def range_out(data):
         for j in data:
             if j >= min_range and j < max_range:
                 range_count["range"+str(i+1)] += 1
-        count_data.append([str("%.2f" % min_range)+"<=  ""<"+str("%.2f" % max_range), range_count["range"+str(i+1)]])
         min_range = max_range
-        max_range = max_range + ((max(data) - min(data))/4.0)
-        #print ">="+str("%.2f" % min_range)+"<"+str("%.2f" % max_range)
-        
-    print count_data
+        max_range = max_range + ((max(data) - min(data))/5.0)
+        #print ans
+        count_data.append([ans, range_count["range"+str(i+1)]])
+    #print count_data
     #print range_count
     return range_count
 
@@ -75,7 +74,7 @@ canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 def process_but():
 
     
-    data = [int(i) for i in input_box.get().split(',')]
+    data = [float(i) for i in input_box.get().split(',')]
 
     
     average =(sum(data))/float((len(data)))
@@ -125,29 +124,36 @@ def process_but():
     
     
     len_data.delete(1, last=None)
-    len_data.insert(0, len(data))
+    len_data_mess = str(len(data))
+    len_data.insert(0, len_data_mess.center(18))
     
     max_data.delete(1, last=None)
-    max_data.insert(0, max(data))
+    max_data_mess = str('%.2f' % max(data))
+    max_data.insert(0, max_data_mess.center(18))
     
     min_data.delete(1, last=None)
-    min_data.insert(0, min(data))
+    min_data_mess = str('%.2f' % min(data))
+    min_data.insert(0, min_data_mess.center(18))
     
     range_data.delete(1, last=None)
-    range_data.insert(0, max(data) - min(data))
+    range_data_mess = str('%.2f' % (max(data) - min(data)))
+    range_data.insert(0, range_data_mess.center(18))
 
     average_data.delete(1, last=None)
-    average_data.insert(0, sum(data)/float(len(data)))
+    average_data_mess = str('%.2f' % (sum(data)/float(len(data))))
+    average_data.insert(0, average_data_mess.center(18))
 
     sd_data.delete(1, last=None)
-    sd_data.insert(0, '%.2f' % num_sd)
+    sd_data_mess = str('%.2f' % num_sd)
+    sd_data.insert(0, sd_data_mess.center(18))
 
     mode_data.delete(1, last=None)
     mode_data.insert(0, mode2)
 
     
     class_interval_data.delete(1, last=None)
-    class_interval_data.insert(0, '%.2f' % ((max(data) - min(data))/float(6)))
+    class_interval_mess = str('%.2f' % ((max(data) - min(data))/float(6)))
+    class_interval_data.insert(0, class_interval_mess.center(18))
 
     
 
