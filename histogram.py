@@ -41,9 +41,9 @@ def range_out(data):
         max_range = max_range + ((max(data) - min(data))/4.0)
         #print ans
         count_data.append([ans, range_count["range"+str(i+1)]])
-    print count_data
+    #print count_data
     #print range_count
-    return range_count
+    return range_count, count_data
 
 
 
@@ -93,7 +93,7 @@ def process_but():
     cur = 0
     for _ in xrange(12):
         y_label.append('%.2f' % cur)
-        cur += max(range_out(data).values())/10.0
+        cur += max(range_out(data)[0].values())/10.0
     print y_label
     #print 'hello' 
     #print data
@@ -111,6 +111,12 @@ def process_but():
     Label(app, text=y_label[2]).place(x=28,y=402)
     Label(app, text=y_label[1]).place(x=28,y=435)
     Label(app, text='0.00').place(x=28,y=468)
+
+    Label(app, text=range_out(data)[1][0][0]).place(x=130,y=480)
+    Label(app, text=range_out(data)[1][1][0]).place(x=258,y=480)
+    Label(app, text=range_out(data)[1][2][0]).place(x=386,y=480)
+    Label(app, text=range_out(data)[1][3][0]).place(x=514,y=480)
+    Label(app, text=range_out(data)[1][4][0]).place(x=642,y=480)
 
     canvas_area.create_rectangle(114, 48, 178, 378)
     canvas_area.create_rectangle(242, 30, 306, 378)
@@ -220,16 +226,6 @@ class_interval_data = Listbox(app, height=1, width=10)
 class_interval_data.place(x=650, y=550)
 '''#######################  output zone  #################'''
 
-
-
-
-
-
-
-
-
-    
-
-        
+  
 
 app.mainloop()
