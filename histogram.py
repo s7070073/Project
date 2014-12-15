@@ -13,6 +13,8 @@ app.resizable(0, 0)
 def callback():
     print 'Hello World.'
 
+
+'''#######################  input zone  #################'''
 #input box
 input_box_label = Label(app, text='Data Input')
 input_box_label.place(x=20, y=5)
@@ -23,8 +25,10 @@ input_box.place(x=20, y=30)
 #process_button
 process_button = Button(app, text='Process',height=3, width=10)
 process_button.place(x=670, y=30)
+'''#######################  output zone  #################'''
 
 
+'''#######################  output zone  #################'''
 #len_data
 len_data_label = Label(app, text='len data')
 len_data_label.place(x=170, y=500)
@@ -76,6 +80,8 @@ range_data_label = Label(app, text='range')
 range_data_label.place(x=570, y=550)
 range_data = Listbox(app, height=1, width=10)
 range_data.place(x=630, y=550)
+'''#######################  output zone  #################'''
+
 
 
 #histro
