@@ -45,8 +45,8 @@ def range_out(data):
         max_range = max_range + ((max(data) - min(data))/4.0)
         #print ans
         count_data.append([ans, range_count["range"+str(i+1)]])
-    print count_data
-    print range_count
+    #print count_data
+    #print range_count
     return range_count, count_data
 
 
@@ -98,9 +98,11 @@ def process_but():
     for _ in xrange(12):
         y_label.append('%.2f' % cur)
         cur += max(range_out(data)[0].values())/10.0
-    print y_label
+    #print y_label
     #print 'hello' 
     #print data
+    
+
 
 
     Label(app, text=y_label[11]).place(x=28,y=105)
@@ -116,17 +118,23 @@ def process_but():
     Label(app, text=y_label[1]).place(x=28,y=435)
     Label(app, text='0.00').place(x=28,y=468)
 
-    Label(app, text=range_out(data)[1][0][0]).place(x=130,y=480)
-    Label(app, text=range_out(data)[1][1][0]).place(x=258,y=480)
-    Label(app, text=range_out(data)[1][2][0]).place(x=386,y=480)
-    Label(app, text=range_out(data)[1][3][0]).place(x=514,y=480)
-    Label(app, text=range_out(data)[1][4][0]).place(x=642,y=480)
+    label0 = Label(app, text=range_out(data)[1][0][0])
+    label0.place(x=130,y=480)
+    label1 = Label(app, text=range_out(data)[1][1][0])
+    label1.place(x=258,y=480)
+    label2 = Label(app, text=range_out(data)[1][2][0])
+    label2.place(x=386,y=480)
+    label3 = Label(app, text=range_out(data)[1][3][0])
+    label3.place(x=514,y=480)
+    label4 = Label(app, text=range_out(data)[1][4][0])
+    label4.place(x=642,y=480)
+    
     base = max(range_out(data)[0].values())
-    canvas_area.create_rectangle(114, conver_bar(range_out(data)[1][0][1], base), 178, 378)
-    canvas_area.create_rectangle(242, conver_bar(range_out(data)[1][1][1], base), 306, 378)
-    canvas_area.create_rectangle(370, conver_bar(range_out(data)[1][2][1], base), 434, 378)
-    canvas_area.create_rectangle(498, conver_bar(range_out(data)[1][3][1], base), 562, 378)
-    canvas_area.create_rectangle(626, conver_bar(range_out(data)[1][4][1], base), 690, 378)
+    canvas_area.create_rectangle(114, conver_bar(range_out(data)[1][0][1], base), 178, 378, fill='yellow')
+    canvas_area.create_rectangle(242, conver_bar(range_out(data)[1][1][1], base), 306, 378, fill='orange')
+    canvas_area.create_rectangle(370, conver_bar(range_out(data)[1][2][1], base), 434, 378, fill='red')
+    canvas_area.create_rectangle(498, conver_bar(range_out(data)[1][3][1], base), 562, 378, fill='violet')
+    canvas_area.create_rectangle(626, conver_bar(range_out(data)[1][4][1], base), 690, 378, fill='blue')
     
     
     len_data.delete(1, last=None)
@@ -165,14 +173,18 @@ def process_but():
 
     
 ''' ################## def function zone################## '''
-
+def reset():
+    app.destroy()
 '''#######################  process zone  #################'''
 
-
-
+   
 #process_button
 process_button = Button(app, height=3, width=10, text='Process', command=process_but)
 process_button.place(x=670, y=30)
+
+#Button(app ,text='reset', command=reset).place(x=20, y=20)
+
+#Button(app, text='reset', command=reset).place(x=20, y=20)
 '''#######################  process zone  #################'''
 
 
