@@ -32,21 +32,42 @@ range_level = 5
 def range_out(data):
     """print range"""
     min_range = min(data)
-    max_range = min(data) + ((max(data) - min(data))/5.0)
+    max_range = min(data) + ((max(data) - min(data))/6.0)
     range_count = {}
+    count_data = []
     for i in xrange(5):
         range_count["range"+str(i+1)] = 0
-        ans = "["+str(min_range)+" - "+str(max_range)+"] |"
+        ans = str(min_range)+" - "+str(max_range)
         for j in data:
-            if j >= min_range and j <= max_range:
-                ans = ans + "-"
+            if j >= min_range and j < max_range:
                 range_count["range"+str(i+1)] += 1
         min_range = max_range
         max_range = max_range + ((max(data) - min(data))/5.0)
-        
+        print ans
+        count_data.append([ans, range_count["range"+str(i+1)]])
+    print count_data
     #print range_count
     return range_count
 
+
+
+#histro
+canvas_area = Canvas(app, width=750, height=410)
+canvas_area.place(x=20, y=100)
+
+canvas_area.create_line(50, 15, 50, 378)
+canvas_area.create_line(50, 378, 704, 378)
+canvas_area.create_line(50, 345, 704, 345, dash=(4, 4))
+canvas_area.create_line(50, 312, 704, 312, dash=(4, 4))
+canvas_area.create_line(50, 279, 704, 279, dash=(4, 4))
+canvas_area.create_line(50, 246, 704, 246, dash=(4, 4))
+canvas_area.create_line(50, 213, 704, 213, dash=(4, 4))
+canvas_area.create_line(50, 180, 704, 180, dash=(4, 4))
+canvas_area.create_line(50, 147, 704, 147, dash=(4, 4))
+canvas_area.create_line(50, 114, 704, 114, dash=(4, 4))
+canvas_area.create_line(50, 81, 704, 81, dash=(4, 4))
+canvas_area.create_line(50, 48, 704, 48, dash=(4, 4))
+canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 
 
 
@@ -82,18 +103,25 @@ def process_but():
     print data
 
 
-    Label(app, text=y_label[11]).place(x=35,y=105)
-    Label(app, text=y_label[10]).place(x=35,y=138)
-    Label(app, text=y_label[9]).place(x=35,y=171)
-    Label(app, text=y_label[8]).place(x=35,y=204)
-    Label(app, text=y_label[7]).place(x=35,y=237)
-    Label(app, text=y_label[6]).place(x=35,y=270)
-    Label(app, text=y_label[5]).place(x=35,y=303)
-    Label(app, text=y_label[4]).place(x=35,y=336)
-    Label(app, text=y_label[3]).place(x=35,y=369)
-    Label(app, text=y_label[2]).place(x=35,y=402)
-    Label(app, text=y_label[1]).place(x=35,y=435)
-    Label(app, text='0.00').place(x=35,y=468)
+    Label(app, text=y_label[11]).place(x=28,y=105)
+    Label(app, text=y_label[10]).place(x=28,y=138)
+    Label(app, text=y_label[9]).place(x=28,y=171)
+    Label(app, text=y_label[8]).place(x=28,y=204)
+    Label(app, text=y_label[7]).place(x=28,y=237)
+    Label(app, text=y_label[6]).place(x=28,y=270)
+    Label(app, text=y_label[5]).place(x=28,y=303)
+    Label(app, text=y_label[4]).place(x=28,y=336)
+    Label(app, text=y_label[3]).place(x=28,y=369)
+    Label(app, text=y_label[2]).place(x=28,y=402)
+    Label(app, text=y_label[1]).place(x=28,y=435)
+    Label(app, text='0.00').place(x=28,y=468)
+
+    canvas_area.create_rectangle(114, 48, 178, 378)
+    canvas_area.create_rectangle(242, 30, 306, 378)
+    canvas_area.create_rectangle(370, 30, 434, 378)
+    canvas_area.create_rectangle(498, 30, 562, 378)
+    canvas_area.create_rectangle(626, 30, 690, 378)
+    
     
     len_data.delete(1, last=None)
     len_data.insert(0, len(data))
@@ -189,25 +217,6 @@ class_interval_data = Listbox(app, height=1, width=10)
 class_interval_data.place(x=630, y=550)
 '''#######################  output zone  #################'''
 
-
-
-#histro
-canvas_area = Canvas(app, width=750, height=410)
-canvas_area.place(x=20, y=100)
-
-canvas_area.create_line(50, 15, 50, 378)
-canvas_area.create_line(50, 378, 704, 378)
-canvas_area.create_line(50, 345, 704, 345, dash=(4, 4))
-canvas_area.create_line(50, 312, 704, 312, dash=(4, 4))
-canvas_area.create_line(50, 279, 704, 279, dash=(4, 4))
-canvas_area.create_line(50, 246, 704, 246, dash=(4, 4))
-canvas_area.create_line(50, 213, 704, 213, dash=(4, 4))
-canvas_area.create_line(50, 180, 704, 180, dash=(4, 4))
-canvas_area.create_line(50, 147, 704, 147, dash=(4, 4))
-canvas_area.create_line(50, 114, 704, 114, dash=(4, 4))
-canvas_area.create_line(50, 81, 704, 81, dash=(4, 4))
-canvas_area.create_line(50, 48, 704, 48, dash=(4, 4))
-canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 
 #canvas_area.create_rectangle(10, 10, 30, 30)
 
