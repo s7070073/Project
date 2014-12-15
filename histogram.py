@@ -33,7 +33,7 @@ def range_out(data):
     count_data = []
     for i in xrange(5):
         range_count["range"+str(i+1)] = 0
-        ans = str(min_range)+"<= "+"<"+str(max_range)
+        ans = "("+str(min_range)+","+str(max_range)+"]"
         for j in data:
             if j >= min_range and j < max_range:
                 range_count["range"+str(i+1)] += 1
@@ -41,7 +41,7 @@ def range_out(data):
         max_range = max_range + ((max(data) - min(data))/4.0)
         #print ans
         count_data.append([ans, range_count["range"+str(i+1)]])
-    #print count_data
+    print count_data
     #print range_count
     return range_count
 
@@ -94,7 +94,7 @@ def process_but():
     for _ in xrange(12):
         y_label.append('%.2f' % cur)
         cur += max(range_out(data).values())/10.0
-    #print y_label
+    print y_label
     #print 'hello' 
     #print data
 
