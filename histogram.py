@@ -10,63 +10,29 @@ app = Tk()
 app.minsize(800, 600)
 app.resizable(0, 0)
 
+#input box
+input_box_label = Label(app, text='Data Input')
+input_box_label.place(x=20, y=5)
+input_box = Entry(app, width=100)
+input_box.place(x=20, y=30)
+
+
+
+
+
+''' ################## def function zone################## '''
 def callback():
     print 'Hello World.'
-"""form kim"""
-"""project def code to tkinter"""
-data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 15, 1, 20]
+
+
+
 range_level = 5
 
-def len_data():
-    """find len of data"""
-    return len(data)
 
-def num_min():
-    """find min number of data"""
-    return min(data)
-
-def num_max():
-    """find max number of data"""
-    return max(data)
-
-def averange():
-    """calculate averange from data"""
-    return (sum(data))/float((len(data)))
-
-def num_sd():
-    """"""
-    average =(sum(data))/float((len(data)))
-    sigma = 0
-    for i in xrange(len(data)):
-        sigma = sigma + ((data[i]-average)**2)
-    num_sd = (sigma/(len(data)-1))**0.5
-    return num_sd
-def mode():
-    """find mode of data"""
-    mode = {}
-    mode2 = []
-    for i in data:
-        if i not in mode:
-            mode[i] = 1
-        else:
-            mode[i] = mode[i] + 1
-    for j in mode:
-        if mode[j] == max(mode.values()):
-            mode2.append('%.2f'%j)
-    return mode2
-
-def pisai():
-    """"""
-    return num_max() - num_min()
-
-def range_len():
-    """"""
-    return pisai() / float(range_level)
-    
-def range_out():
+def range_out(data):
     """print range"""
-    min_range = num_min()
-    max_range = num_min() + range_len()
+    min_range = min()
+    max_range = min() + range_len(data, range_level)
     range_count = {}
     for i in xrange(5):
         range_count["range"+str(i+1)] = 0
@@ -76,37 +42,34 @@ def range_out():
                 ans = ans + "-"
                 range_count["range"+str(i+1)] += 1
         min_range = max_range
-        max_range = max_range + range_len()
+        max_range = max_range + range_len(data, range_level)
         print ans
     print range_count
-        
-
-print "data >>>", data
-print "len_data >>>", '%.2f'%len_data()
-print "num_min >>>", '%.2f'%num_min()
-print "num_max >>>", '%.2f'%num_max()
-print "averange >>>", '%.2f'%averange()
-print "num_sd >>>", '%.2f'%num_sd()
-print "mode >>>", mode()
-print "pisai >>>", '%.2f'%pisai()
-print "range_len >>>", '%.2f'%range_len()
-print ""
-range_out()
 
 
 
-'''#######################  input zone  #################'''
-#input box
-input_box_label = Label(app, text='Data Input')
-input_box_label.place(x=20, y=5)
-input_box = Entry(app, width=100)
-input_box.place(x=20, y=30)
+
+def process_but():
+
+    
+    data = [int(i) for i in input_box.get().split(',')]
+    print 'hello' 
+    print data
+    len_data.delete(1, last=None)
+    len_data.insert(0, len(data))
+    
+
+''' ################## def function zone################## '''
+
+'''#######################  process zone  #################'''
+
 
 
 #process_button
-process_button = Button(app, text='Process',height=3, width=10)
+process_button = Button(app, height=3, width=10, text='Process', command=process_but)
 process_button.place(x=670, y=30)
-'''#######################  output zone  #################'''
+'''#######################  process zone  #################'''
+
 
 
 '''#######################  output zone  #################'''
@@ -114,7 +77,6 @@ process_button.place(x=670, y=30)
 len_data_label = Label(app, text='len data')
 len_data_label.place(x=170, y=520)
 len_data = Listbox(app, height=1, width=10)
-len_data.insert(1, 321)
 len_data.place(x=250, y=520)
 
 #max_data
@@ -186,5 +148,12 @@ canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 canvas_area.create_rectangle(10, 10, 30, 30)
 
 
+
+
+
+
+    
+
+        
 
 app.mainloop()
