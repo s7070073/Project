@@ -53,12 +53,60 @@ def process_but():
 
     
     data = [int(i) for i in input_box.get().split(',')]
+
+    
+    average =(sum(data))/float((len(data)))
+    sigma = 0
+    for i in xrange(len(data)):
+        sigma = sigma + ((data[i]-average)**2)
+    num_sd = (sigma/(len(data)-1))**0.5
+
+    mode = {}
+    mode2 = []
+    for i in data:
+        if i not in mode:
+            mode[i] = 1
+        else:
+            mode[i] = mode[i] + 1
+    for j in mode:
+        if mode[j] == max(mode.values()):
+            mode2.append(j)
+    y_label = []
+    cur = 0
+    for _ in xrange(11):
+        y_label.append('%.2f' % cur)
+        cur += max(data)/10.0
+    print y_label
     print 'hello' 
     print data
     len_data.delete(1, last=None)
     len_data.insert(0, len(data))
     
+    max_data.delete(1, last=None)
+    max_data.insert(0, max(data))
+    
+    min_data.delete(1, last=None)
+    min_data.insert(0, min(data))
+    
+    range_data.delete(1, last=None)
+    range_data.insert(0, max(data) - min(data))
 
+    average_data.delete(1, last=None)
+    average_data.insert(0, sum(data)/float(len(data)))
+
+    sd_data.delete(1, last=None)
+    sd_data.insert(0, '%.2f' % num_sd)
+
+    mode_data.delete(1, last=None)
+    mode_data.insert(0, mode2)
+
+    
+    class_interval_data.delete(1, last=None)
+    class_interval_data.insert(0, '%.2f' % ((max(data) - min(data))/float(6)))
+
+    
+
+    
 ''' ################## def function zone################## '''
 
 '''#######################  process zone  #################'''
@@ -91,11 +139,11 @@ min_data_label.place(x=20, y=550)
 min_data = Listbox(app, height=1, width=10)
 min_data.place(x=80, y=550)
 
-#pisai_data
-pisia_data_label = Label(app, text='pisia data')
-pisia_data_label.place(x=170, y=550)
-pisia_data = Listbox(app, height=1, width=10)
-pisia_data.place(x=250, y=550)
+#range_data
+range_data_label = Label(app, text='Range')
+range_data_label.place(x=170, y=550)
+range_data = Listbox(app, height=1, width=10)
+range_data.place(x=250, y=550)
 
 #average_data
 average_data_label = Label(app, text='average')
@@ -118,11 +166,11 @@ mode_data = Listbox(app, height=1, width=10)
 mode_data.place(x=630, y=520)
 
 
-#range_data
-range_data_label = Label(app, text='range')
-range_data_label.place(x=570, y=550)
-range_data = Listbox(app, height=1, width=10)
-range_data.place(x=630, y=550)
+#class_interval_data
+class_interval_data_label = Label(app, text='Class Interval')
+class_interval_data_label.place(x=570, y=550)
+class_interval_data = Listbox(app, height=1, width=10)
+class_interval_data.place(x=630, y=550)
 '''#######################  output zone  #################'''
 
 
