@@ -25,24 +25,20 @@ def callback():
     print 'Hello World.'
 
 
-
-range_level = 5
-
-
 def range_out(data):
     """print range"""
     min_range = min(data)
-    max_range = min(data) + ((max(data) - min(data))/6.0)
+    max_range = min(data) + ((max(data) - min(data))/4.0)
     range_count = {}
     count_data = []
     for i in xrange(5):
         range_count["range"+str(i+1)] = 0
-        ans = str(min_range)+" - "+str(max_range)
+        ans = str(min_range)+"<= "+"<"+str(max_range)
         for j in data:
             if j >= min_range and j < max_range:
                 range_count["range"+str(i+1)] += 1
         min_range = max_range
-        max_range = max_range + ((max(data) - min(data))/5.0)
+        max_range = max_range + ((max(data) - min(data))/4.0)
         #print ans
         count_data.append([ans, range_count["range"+str(i+1)]])
     #print count_data
@@ -98,9 +94,9 @@ def process_but():
     for _ in xrange(12):
         y_label.append('%.2f' % cur)
         cur += max(range_out(data).values())/10.0
-    print y_label
-    print 'hello' 
-    print data
+    #print y_label
+    #print 'hello' 
+    #print data
 
 
     Label(app, text=y_label[11]).place(x=28,y=105)
