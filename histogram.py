@@ -24,6 +24,10 @@ input_box.place(x=30, y=67)
 def callback():
     print 'Hello World.'
 
+def conver_bar(cur, base):
+    xxx = (cur * 330.0)/base
+    return (330 - xxx) + 48
+
 
 def range_out(data):
     """print range"""
@@ -41,8 +45,8 @@ def range_out(data):
         max_range = max_range + ((max(data) - min(data))/4.0)
         #print ans
         count_data.append([ans, range_count["range"+str(i+1)]])
-    #print count_data
-    #print range_count
+    print count_data
+    print range_count
     return range_count, count_data
 
 
@@ -117,12 +121,12 @@ def process_but():
     Label(app, text=range_out(data)[1][2][0]).place(x=386,y=480)
     Label(app, text=range_out(data)[1][3][0]).place(x=514,y=480)
     Label(app, text=range_out(data)[1][4][0]).place(x=642,y=480)
-
-    canvas_area.create_rectangle(114, 48, 178, 378)
-    canvas_area.create_rectangle(242, 30, 306, 378)
-    canvas_area.create_rectangle(370, 30, 434, 378)
-    canvas_area.create_rectangle(498, 30, 562, 378)
-    canvas_area.create_rectangle(626, 30, 690, 378)
+    base = max(range_out(data)[0].values())
+    canvas_area.create_rectangle(114, conver_bar(range_out(data)[1][0][1], base), 178, 378)
+    canvas_area.create_rectangle(242, conver_bar(range_out(data)[1][1][1], base), 306, 378)
+    canvas_area.create_rectangle(370, conver_bar(range_out(data)[1][2][1], base), 434, 378)
+    canvas_area.create_rectangle(498, conver_bar(range_out(data)[1][3][1], base), 562, 378)
+    canvas_area.create_rectangle(626, conver_bar(range_out(data)[1][4][1], base), 690, 378)
     
     
     len_data.delete(1, last=None)
