@@ -32,7 +32,7 @@ range_level = 5
 def range_out(data):
     """print range"""
     min_range = min(data)
-    max_range = min(data) + ((max(data) - min(data))/6.0)
+    max_range = min(data) + ((max(data) - min(data))/4.0)
     range_count = {}
     count_data = []
     for i in xrange(5):
@@ -41,10 +41,11 @@ def range_out(data):
         for j in data:
             if j >= min_range and j < max_range:
                 range_count["range"+str(i+1)] += 1
+        count_data.append([str("%.2f" % min_range)+"<=  ""<"+str("%.2f" % max_range), range_count["range"+str(i+1)]])
         min_range = max_range
-        max_range = max_range + ((max(data) - min(data))/5.0)
-        print ans
-        count_data.append([ans, range_count["range"+str(i+1)]])
+        max_range = max_range + ((max(data) - min(data))/4.0)
+        #print ">="+str("%.2f" % min_range)+"<"+str("%.2f" % max_range)
+        
     print count_data
     #print range_count
     return range_count
@@ -136,7 +137,7 @@ def process_but():
     range_data.insert(0, max(data) - min(data))
 
     average_data.delete(1, last=None)
-    average_data.insert(0, '%.2f' % (sum(data)/float(len(data))))
+    average_data.insert(0, sum(data)/float(len(data)))
 
     sd_data.delete(1, last=None)
     sd_data.insert(0, '%.2f' % num_sd)
