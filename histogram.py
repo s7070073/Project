@@ -73,6 +73,23 @@ canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
 
 def process_but():
 
+    #histro
+    canvas_area = Canvas(app, width=750, height=410)
+    canvas_area.place(x=20, y=100)
+
+    canvas_area.create_line(50, 15, 50, 378)
+    canvas_area.create_line(50, 378, 704, 378)
+    canvas_area.create_line(50, 345, 704, 345, dash=(4, 4))
+    canvas_area.create_line(50, 312, 704, 312, dash=(4, 4))
+    canvas_area.create_line(50, 279, 704, 279, dash=(4, 4))
+    canvas_area.create_line(50, 246, 704, 246, dash=(4, 4))
+    canvas_area.create_line(50, 213, 704, 213, dash=(4, 4))
+    canvas_area.create_line(50, 180, 704, 180, dash=(4, 4))
+    canvas_area.create_line(50, 147, 704, 147, dash=(4, 4))
+    canvas_area.create_line(50, 114, 704, 114, dash=(4, 4))
+    canvas_area.create_line(50, 81, 704, 81, dash=(4, 4))
+    canvas_area.create_line(50, 48, 704, 48, dash=(4, 4))
+    canvas_area.create_line(50, 15, 704, 15, dash=(4, 4))
     
     data = [float(i) for i in input_box.get().split(',')]
 
