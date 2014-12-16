@@ -17,9 +17,11 @@ def about():
     about = Toplevel(app)
     about.wm_title("About Us")
     about.iconbitmap('favicon.ico')
-    about.minsize(250, 300)
+    about.minsize(300, 250)
     about.resizable(0, 0)
-    Label(about, text='test \n 321').place(x=100, y=50)
+    Label(about, text='\nAbout Us',font=('times', 20, 'bold')).pack()
+    Label(about, text='\nPONGNARAS  CHUTHONG\n57070073',font=('times', 10)).pack()
+    Label(about, text='\nPHATTARAPON  KAEWKUSONWIWAT\n57070086',font=('times', 10)).pack()
     
 
 def menu_help():
@@ -28,7 +30,7 @@ def menu_help():
     menu_help.iconbitmap('favicon.ico')
     menu_help.minsize(400, 300)
     menu_help.resizable(0, 0)
-    Label(menu_help, text='test \n 321').place(x=100, y=50)
+    Label(menu_help, text='help').pack()
 
 #input box
 input_box_label = Label(app, text='Data Input')
