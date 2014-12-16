@@ -286,9 +286,9 @@ class_interval_data.place(x=650, y=550)
 
 def histogram_help():
     """
-    **************************************************
-    ####################### Help #####################
-    **************************************************
+    ****************************************************************
+    ####################### Help ###################################
+    ****************************************************************
     *** How to use Histograme ***
     *****************************
     |
@@ -323,79 +323,127 @@ def histogram_help():
     ******************
     ***   output   ***
     ******************
-    .output will show values
-    .
-    .---[Max]---
-    .
-    .    in Max list box ->>> show max values of data input
-    .
-    .    Example.
-    .           -> input = 1,2,3,4,5,6,7,8,9,0
-    .              [Max] -> [ 9 ]
-    .    Example.
-    .           -> input = 0,10,3,15,3,6,16,17,15,15
-    .              [Max] -> [ 17 ]
-    .    Example.
-    .           -> input = 0,10.0,3.0,1.5,3,6,16,17,1.5,15
-    .              [Max] -> [ 17 ]
-    .
-    .---[Min]---
-    .
-    .    in Min list box ->>> show min values of data input
-    .
-    .    Example.
-    .           -> input = 1,2,3,4,5,6,7,8,9,0
-    .              [Min] -> [ 0 ]
-    .    Example.
-    .           -> input = 0,10,3,15,3,6,16,17,15,15
-    .              [Min] -> [ 0 ]
-    .    Example.
-    .           -> input = 10.0,3.0,1.5,3,6,16,17,1.5,15
-    .              [Min] -> [ 1.5 ]
-    .
-    .---[Length]---
-    .
-    .   in Length list box ->>> show number of data input
-    .
-    .    Example.
-    .           -> input = 1,2,3,4,5,6,7,8,9,0
-    .              [Length] -> [ 10 ]
-    .    Example.
-    .           -> input = 0,6,16,17,15,15
-    .              [Length] -> [ 5 ]
-    .    Example.
-    .           -> input = 10.0,3.0,1.5,3,6,16,17,1.5,15
-    .              [Length] -> [ 8 ]
-    .
-    .---[Range]---
-    .
-    .   in Range list box ->>> show [Max] - [Min] 
-    .
-    .   Example.
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    
+    |
+    |output will show values
+    |
+    |---[Max]---
+    |
+    |    in Max list box ->>> show max values form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |           -> output [Max] -> [ 9.00 ]
+    |    Example.
+    |           -> input = 0, 10, 3, 15, 3, 6, 16, 17, 15, 15
+    |           -> output [Max] -> [ 17.00 ]
+    |    Example.
+    |           -> input = 0, 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output [Max] -> [ 17.00 ]
+    |
+    |---[Min]---
+    |
+    |    in Min list box ->>> show min values form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |           -> output [Min] -> [ 0.00 ]
+    |    Example.
+    |           -> input = 0, 10, 3, 15, 3, 6, 16, 17, 15, 15
+    |           -> output [Min] -> [ 0.00 ]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output [Min] -> [ 1.50 ]
+    |
+    |---[Length]---
+    |
+    |   in Length list box ->>> show number form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |           -> output [Length] -> [ 10 ]
+    |    Example.
+    |           -> input = 0, 6, 16, 17, 15, 15
+    |           -> output [Length] -> [ 5 ]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output [Length] -> [ 8 ]
+    |
+    |---[Range]---
+    |
+    |   in Range list box ->>> show [Max] - [Min] form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |               [Max] = 9.00, [Min] = 0.00
+    |               [Max] - [Min] = 9.00
+    |           -> output [Range] -> [ 9.00 ]
+    |    Example.
+    |           -> input = 0,6,16,17,15,15
+    |               [Max] = 17.00, [Min] = 0.00
+    |               [Max] - [Min] = 17.00
+    |           -> output [Range] -> [ 17.00]
+    |    Example.
+    |           -> input = 10.0,3.0,1.5,3,6,16,17,1.5,15
+    |               [Max] = 17.00, [Min] = 1.50
+    |               [Max] - [Min] = 15.50
+    |           -> output [Range] -> [ 15.50 ]
+    |
+    |---[Average]---
+    |
+    |   in Average list box ->>> show Anverage valuse form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |           -> output [Average] -> [ 4.50 ]
+    |    Example.
+    |           -> input = 0, 6, 16, 17, 15, 15
+    |           -> output [Average] -> [ 11.50]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output  [Average] -> [ 8.11 ]
+    |
+    |---[S.D.]---
+    |
+    |   in S.D. list box ->>> show S.D. valuse form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |           -> output [S.D.] -> [ 3.30 ]
+    |    Example.
+    |           -> input = 0, 6, 16, 17, 15, 15
+    |           -> output [S.D.] -> [ 6.89]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output  [S.D.] -> [ 6.48 ]
+    |
+    |---[Mode]---
+    |
+    |   in Mode list box ->>> show number is max repeatedly form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0
+    |           -> output [Mode] -> [ [0.0] ]
+    |    Example.
+    |           -> input = 0, 6, 16, 17, 15, 15
+    |           -> output [Mode] -> [ [15.0]]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output  [Mode] -> [ [1.5, 3.0] ]
+    |
+    |---[Class Interval]---
+    |
+    |   in Class Interval list box ->>> show how for graph(n) to graph(n+1)
+    |   form data input
+    |
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 0
+    |           -> output [Class Interval] -> [ 1.50 ]
+    |    Example.
+    |           -> input = 0, 6, 16, 17, 15, 15
+    |           -> output [Class Interval] -> [ 2.83 ]
+    |    Example.
+    |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
+    |           -> output  [Class Interval] -> [ 2.58 ]
 """
 
 menubar = Menu(app)
