@@ -9,6 +9,8 @@ from Tkinter import *
 app = Tk()
 app.minsize(800, 600)
 app.resizable(0, 0)
+app.title("Histogram")
+app.iconbitmap('favicon.ico')
 
 #input box
 input_box_label = Label(app, text='Data Input')
