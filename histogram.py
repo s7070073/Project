@@ -22,6 +22,13 @@ def about():
     Label(about, text='test \n 321').place(x=100, y=50)
     
 
+def menu_help():
+    menu_help = Toplevel(app)
+    menu_help.wm_title("Help")
+    menu_help.iconbitmap('favicon.ico')
+    menu_help.minsize(400, 300)
+    menu_help.resizable(0, 0)
+    Label(menu_help, text='test \n 321').place(x=100, y=50)
 
 #input box
 input_box_label = Label(app, text='Data Input')
@@ -281,7 +288,7 @@ menubar.add_cascade(label="File", menu=filemenu)
 
 helpmenu = Menu(menubar, tearoff=0)
 helpmenu.add_command(label="About", command=about)
-helpmenu.add_command(label="Help", command=callback)
+helpmenu.add_command(label="Help", command=menu_help)
 menubar.add_cascade(label="Help", menu=helpmenu)
 
 app.config(menu=menubar)
