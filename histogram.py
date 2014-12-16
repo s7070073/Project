@@ -12,6 +12,17 @@ app.resizable(0, 0)
 app.title("Histogram")
 app.iconbitmap('favicon.ico')
 
+
+def about():
+    about = Toplevel(app)
+    about.wm_title("About Us")
+    about.iconbitmap('favicon.ico')
+    about.minsize(250, 300)
+    about.resizable(0, 0)
+    Label(about, text='test \n 321').place(x=100, y=50)
+    
+
+
 #input box
 input_box_label = Label(app, text='Data Input')
 input_box_label.place(x=30, y=42)
@@ -22,9 +33,12 @@ input_box.place(x=30, y=67)
 
 
 
+
 ''' ################## def function zone################## '''
 def callback():
     print 'Hello World.'
+
+
 
 def conver_bar(cur, base):
     xxx = (cur * 330.0)/base
@@ -260,7 +274,17 @@ class_interval_data_label.place(x=570, y=550)
 class_interval_data = Listbox(app, height=1, width=10)
 class_interval_data.place(x=650, y=550)
 '''#######################  output zone  #################'''
+menubar = Menu(app)
+filemenu = Menu(menubar, tearoff=0)
+filemenu.add_command(label="Exit", command=app.destroy)
+menubar.add_cascade(label="File", menu=filemenu)
 
+helpmenu = Menu(menubar, tearoff=0)
+helpmenu.add_command(label="About", command=about)
+helpmenu.add_command(label="Help", command=callback)
+menubar.add_cascade(label="Help", menu=helpmenu)
+
+app.config(menu=menubar)
   
 
 app.mainloop()
