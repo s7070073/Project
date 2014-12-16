@@ -31,6 +31,7 @@ def conver_bar(cur, base):
     return (330 - xxx) + 48
 
 
+
 def range_out(data):
     """print range"""
     min_range = min(data)
@@ -192,8 +193,7 @@ def process_but():
 
     
 ''' ################## def function zone################## '''
-def reset():
-    app.destroy()
+
 '''#######################  process zone  #################'''
 
    
