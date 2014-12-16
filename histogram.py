@@ -444,7 +444,7 @@ def histogram_help():
     |    Example.
     |           -> input = 10.0, 3.0, 1.5, 3, 6, 16, 17, 1.5, 15
     |           -> output  [Class Interval] -> [ 2.58 ]
-"""
+    """
 
 menubar = Menu(app)
 filemenu = Menu(menubar, tearoff=0)
