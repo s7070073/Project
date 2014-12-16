@@ -283,6 +283,121 @@ class_interval_data_label.place(x=570, y=550)
 class_interval_data = Listbox(app, height=1, width=10)
 class_interval_data.place(x=650, y=550)
 '''#######################  output zone  #################'''
+
+def histogram_help():
+    """
+    **************************************************
+    ####################### Help #####################
+    **************************************************
+    *** How to use Histograme ***
+    *****************************
+    |
+    | Step1.
+    | -> input(int, float)
+    |            Example1. -> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    |            Example2. -> 1.2, 1, 3, 4, 1.11, 2, 3, 6, 4, 5
+    |
+    | Step2.
+    | -> Click -> [Process] Button
+    |
+    | Step3.
+    | -> The Program running and process to output
+    |
+    ******************
+    ***   input    ***
+    ******************
+    |
+    |you can put number in int, float, mix(int and float)
+    |---> int
+    |    Example.
+    |           -> input = 1, 2, 3, 4, 5, 6, 7, 8, 9, 0
+    |
+    |---> float
+    |    Example.
+    |           -> input = 1.4, 0.0, 10.0, 3.0, 15.0, 3.0, 6.0, 1.6
+    |
+    |---> Mix int and float
+    |    Example.
+    |           -> input = 1.4, 0, 10.0, 3.0, 1.5, 3, 6.3, 16, 17, 1.5, 15
+    |
+    ******************
+    ***   output   ***
+    ******************
+    .output will show values
+    .
+    .---[Max]---
+    .
+    .    in Max list box ->>> show max values of data input
+    .
+    .    Example.
+    .           -> input = 1,2,3,4,5,6,7,8,9,0
+    .              [Max] -> [ 9 ]
+    .    Example.
+    .           -> input = 0,10,3,15,3,6,16,17,15,15
+    .              [Max] -> [ 17 ]
+    .    Example.
+    .           -> input = 0,10.0,3.0,1.5,3,6,16,17,1.5,15
+    .              [Max] -> [ 17 ]
+    .
+    .---[Min]---
+    .
+    .    in Min list box ->>> show min values of data input
+    .
+    .    Example.
+    .           -> input = 1,2,3,4,5,6,7,8,9,0
+    .              [Min] -> [ 0 ]
+    .    Example.
+    .           -> input = 0,10,3,15,3,6,16,17,15,15
+    .              [Min] -> [ 0 ]
+    .    Example.
+    .           -> input = 10.0,3.0,1.5,3,6,16,17,1.5,15
+    .              [Min] -> [ 1.5 ]
+    .
+    .---[Length]---
+    .
+    .   in Length list box ->>> show number of data input
+    .
+    .    Example.
+    .           -> input = 1,2,3,4,5,6,7,8,9,0
+    .              [Length] -> [ 10 ]
+    .    Example.
+    .           -> input = 0,6,16,17,15,15
+    .              [Length] -> [ 5 ]
+    .    Example.
+    .           -> input = 10.0,3.0,1.5,3,6,16,17,1.5,15
+    .              [Length] -> [ 8 ]
+    .
+    .---[Range]---
+    .
+    .   in Range list box ->>> show [Max] - [Min] 
+    .
+    .   Example.
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    .
+    
+"""
+
 menubar = Menu(app)
 filemenu = Menu(menubar, tearoff=0)
 filemenu.add_command(label="Exit", command=app.destroy)
