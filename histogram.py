@@ -7,7 +7,7 @@ PHONGNARET(57070073) and PHATTARAPON(57070086).
 '''
 from Tkinter import *
 app = Tk()
-app.minsize(800, 600)
+app.minsize(800, 615)
 app.resizable(0, 0)
 app.title("Histogram")
 app.iconbitmap('favicon.ico')
@@ -34,9 +34,9 @@ def menu_help():
 
 #input box
 input_box_label = Label(app, text='Data Input')
-input_box_label.place(x=30, y=42)
+input_box_label.place(x=26, y=22)
 input_box = Entry(app, width=98)
-input_box.place(x=30, y=67)
+input_box.place(x=30, y=47)
 
 
 
