@@ -28,9 +28,9 @@ def menu_help():
     menu_help = Toplevel(app)
     menu_help.wm_title("Help")
     menu_help.iconbitmap('favicon.ico')
-    menu_help.minsize(400, 300)
+    menu_help.minsize(300, 50)
     menu_help.resizable(0, 0)
-    Label(menu_help, text='help').pack()
+    Label(menu_help, text='\nPlease open "Help.txt" to get information.').pack()
 
 #input box
 input_box_label = Label(app, text='Data Input')
